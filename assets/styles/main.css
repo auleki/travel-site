@@ -227,4 +227,19 @@ header .toggle.active {
   opacity: 1;
   visibility: visible;
 }
+
+@media (max-width: 991px) {
+  section {
+    background-size: 200%;
+  }
+  .content h2 {
+    font-size: 20vw;
+    color: #ffffff;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  .trailer video {
+    max-width: 90%;
+    outline: none;
+  }
+}
 /*# sourceMappingURL=main.css.map */
