@@ -3,6 +3,7 @@
 $c1: #015b75;
 $f1: Poppins;
 $f2: 'Kaushan Script';
+$c2: #ff286f;
 
 * {
   padding: 0;
@@ -16,7 +17,7 @@ html {
   scroll-behavior: smooth;
 }
 
-section { 
+section {
   position: relative;
   min-height: 100vh;
   display: flex;
@@ -57,6 +58,13 @@ header {
     background: url('/assets/images/menu.png') center no-repeat;
     background-size: 30px;
     cursor: pointer;
+    transition: 75ms ease-in;
+
+    &.active {
+      background: url('/assets/images/close.png') center no-repeat;
+      background-size: 25px;
+      cursor: pointer;
+    }
   }
 }
 
@@ -116,7 +124,69 @@ header {
   background: #fff;
   display: flex;
   align-items: center;
+  opacity: 0;
+  visibility: hidden;
   justify-content: center;
   transition: 200ms;
 
+  ul {
+    list-style-type: none;
+    text-align: center;
+  }
+
+  li {
+    margin: 20px 0;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 2em;
+    color: $c1;
+    font-weight: 300;
+
+    &:hover {
+      color: $c2;
+    }
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.trailer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 200ms;
+
+  video {
+    max-width: 900px;
+    outline: 0;
+  }
+
+  .close {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    transform: scale(.7);
+    cursor: pointer;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
